@@ -75,3 +75,24 @@ pnpm format
     pnpm add -D prettier-plugin-tailwindcss
     ```
 - 建議在提交程式碼前執行格式化，確保程式碼風格一致。
+
+## 程式碼檢查（ESLint）
+
+本專案已整合 ESLint，並支援 TypeScript、React、React Hooks 與 Prettier。
+
+### 常用指令
+
+```bash
+pnpm lint      # 檢查所有 JS/TS/React 檔案
+pnpm lint:fix  # 自動修復可修復的問題
+```
+
+### 設定檔
+
+- `.eslintrc`：已根據團隊習慣與最佳實踐設定
+- `.eslintignore`：排除不需檢查的檔案
+
+### 注意事項
+
+- 已自動整合 import 排序（simple-import-sort），執行 lint:fix 會自動調整 import 順序。
+- 建議在提交程式碼前執行 lint 與 lint:fix，確保程式碼品質與一致性。
