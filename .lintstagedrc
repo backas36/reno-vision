@@ -1,0 +1,5 @@
+{
+    "*.{js,jsx,ts,tsx}": ["pnpm lint:fix", "pnpm format"],
+    "*.{css,less,scss,sass}": ["pnpm format"],
+    "*.{json,md}": ["pnpm format"]
+}
