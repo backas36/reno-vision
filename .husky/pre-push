@@ -1,1 +1,3 @@
-pnpm build
+pnpm test:ci || { echo "❌ 測試未通過，請修正後再 push！"; exit 1; }
+pnpm build || { echo "❌ 專案無法成功 build，請修正後再 push！"; exit 1; }
+echo "✅ 測試與建置皆成功，可以安心 push！"
