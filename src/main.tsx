@@ -4,12 +4,12 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 
-import PublicRoutes from "@/routes/public.tsx";
+import App from "@/App";
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
         <BrowserRouter>
-            <PublicRoutes />
+            <App />
         </BrowserRouter>
     </StrictMode>
 );

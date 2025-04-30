@@ -1,11 +1,12 @@
-import { Button } from "@/components/ui/button";
+import { Suspense } from "react";
+
+import PublicRoutes from "@/routes";
 
 function App() {
     return (
-        <div className='flex h-screen flex-col items-center justify-center'>
-            <Button onClick={() => alert("Hello, World!")}>Click me</Button>
-            <h1>Hello, World!</h1>
-        </div>
+        <Suspense fallback={<div>Loading...</div>}>
+            <PublicRoutes />
+        </Suspense>
     );
 }
 
