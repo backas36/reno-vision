@@ -1,7 +1,9 @@
+import { Button } from "./components/ui/button";
+
 function App() {
     return (
         <div className='flex h-screen flex-col items-center justify-center'>
-            <h1 className='text-4xl font-bold'>Hello, World!</h1>
+            <Button onClick={() => alert("Hello, World!")}>Click me</Button>
         </div>
     );
 }
