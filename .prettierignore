@@ -11,4 +11,7 @@ pnpm-lock.yaml
 yarn.lock
 
 # Cache directories
-.cache 
+.cache
+
+# Coverage directories
+coverage
