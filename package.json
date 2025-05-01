@@ -12,8 +12,8 @@
         "format": "prettier --write .",
         "prepare": "husky",
         "commit": "cz",
-        "test": "vitest --passWithNoTests",
-        "test:ci": "vitest run",
+        "test": "vitest",
+        "test:ci": "vitest run --passWithNoTests",
         "test:ui": "vitest --ui",
         "coverage:open": "open coverage/index.html",
         "coverage": "vitest run --coverage"
