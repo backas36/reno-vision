@@ -1,18 +1,18 @@
 import { Outlet } from "react-router";
 
 import AppSidebar from "@/components/layout/AppSidebar";
-import Navbar from "@/components/layout/Navbar";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 
 const MainLayout = () => {
     return (
         <>
-            <AppSidebar />
-            <main className='w-full outline'>
-                <Navbar />
-                <div className='bg-amber-200 px-4'>
+            <SidebarProvider defaultOpen>
+                <AppSidebar />
+                <main className='container mx-auto px-2'>
+                    <SidebarTrigger />
                     <Outlet />
-                </div>
-            </main>
+                </main>
+            </SidebarProvider>
         </>
     );
 };
