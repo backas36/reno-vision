@@ -1,5 +1,12 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
+import { ChevronUp, User2 } from "lucide-react";
 
+import { sidebarContentData } from "@/components/layout/sidebarContentData";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import {
     Sidebar,
     SidebarContent,
@@ -13,34 +20,7 @@ import {
     SidebarMenuItem,
 } from "@/components/ui/sidebar";
 
-// Menu items.
-const items = [
-    {
-        title: "Home",
-        url: "#",
-        icon: Home,
-    },
-    {
-        title: "Inbox",
-        url: "#",
-        icon: Inbox,
-    },
-    {
-        title: "Calendar",
-        url: "#",
-        icon: Calendar,
-    },
-    {
-        title: "Search",
-        url: "#",
-        icon: Search,
-    },
-    {
-        title: "Settings",
-        url: "#",
-        icon: Settings,
-    },
-];
+const items = sidebarContentData;
 export function AppSidebar() {
     return (
         <Sidebar>
@@ -64,7 +44,28 @@ export function AppSidebar() {
                     </SidebarGroupContent>
                 </SidebarGroup>
             </SidebarContent>
-            <SidebarFooter />
+            <SidebarFooter>
+                <SidebarMenu>
+                    <SidebarMenuItem>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <SidebarMenuButton>
+                                    <User2 /> Username
+                                    <ChevronUp className='ml-auto' />
+                                </SidebarMenuButton>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent side='top' className='w-[--radix-popper-anchor-width]' align='end'>
+                                <DropdownMenuItem>
+                                    <span>Account</span>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem>
+                                    <span>Sign out</span>
+                                </DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                    </SidebarMenuItem>
+                </SidebarMenu>
+            </SidebarFooter>
         </Sidebar>
     );
 }
